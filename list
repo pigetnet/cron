@@ -1,0 +1,3 @@
+#!/bin/bash
+/show/description "Automated tasks"
+crontab -l |sed s'-*/1 \* \* \* \*-1m =>-'|sed s'-*/5 \* \* \* \*-1m =>-'

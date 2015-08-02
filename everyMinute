@@ -1,0 +1,10 @@
+#!/bin/bash
+commandonly=$(echo $1|awk '{print $1}')
+command="$1"
+cd /
+if [[ -e $commandonly ]];then
+	(crontab -l 2>/dev/null; echo "*/1 * * * * $command") | crontab -
+	/do/cron/list
+else
+	echo "command doesn't exists"
+fi
